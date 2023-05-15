@@ -7,6 +7,6 @@ def print_matrix_integer(matrix=[[]]):
         for j in matrix[i]:
             wrap = wrap + 1
             print("{:d}".format(j), end="")
-            if wrap < 3:
+            if wrap < len(matrix[i]):
                 print("{}".format(" "), end="")
         print("{}".format(""))
