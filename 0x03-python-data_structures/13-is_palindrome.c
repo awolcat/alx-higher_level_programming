@@ -10,7 +10,7 @@
  */
 int is_palindrome(listint_t **head)
 {
-	int size = 0, i = 0, sum = 0;
+	int size = 0, i = 0, sum = 1, j = 0;
 	int *list, *new_list;
 	listint_t *temp;
 
@@ -27,17 +27,17 @@ int is_palindrome(listint_t **head)
 		temp = temp->next;
 	}
 	new_list = malloc(sizeof(int) * size);
-	for (i = 0; i < size; i++)
-		new_list[i] = list[i];
+	for (i = size - 1, j = 0; i >= 0; i--, j++)
+		new_list[j] = list[i];
 	for (i = 0; i < size; i++)
 	{
-		if (list[i] < 0)
-			list[i] = -list[i];
-		if (new_list[i] < 0)
-			new_list[i] = -new_list[i];
-		sum += (new_list[i] - list[i]);
+		if (list[i] != new_list[i])
+		{
+			sum = 0;
+			break;
+		}
 	}
-	if (sum == 0)
-		return (1);
-	return (0);
+	free(list);
+	free(new_list);
+	return (sum);
 }
