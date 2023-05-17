@@ -7,15 +7,14 @@ def roman_to_int(roman_string):
             number = roman[roman_string[0]]
             return number
         if roman[roman_string[0]] < roman[roman_string[-1]]:
-            for i in roman_string:
-                if i != roman_string[-1]:
-                    number += roman[roman_string[-1]] - roman[i]
+            number = roman[roman_string[-1]]
+            for i in range(len(roman_string) - 1):
+                number -= roman[roman_string[i]]
             return number
         elif roman[roman_string[0]] > roman[roman_string[-1]]:
             number = roman[roman_string[0]]
-            for i in roman_string:
-                if i != roman_string[0]:
-                    number += roman[i]
+            for i in range(1, len(roman_string)):
+                number += roman[roman_string[i]]
             return number
     else:
         return 0
