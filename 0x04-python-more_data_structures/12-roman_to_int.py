@@ -10,12 +10,18 @@ def roman_to_int(roman_string):
             elif roman[roman_string[0]] < roman[roman_string[-1]]:
                 number = roman[roman_string[-1]]
                 for i in range(len(roman_string) - 1):
-                    number -= roman[roman_string[i]]
+                    if roman_string[i] in list(roman.keys()):
+                        number -= roman[roman_string[i]]
+                    else:
+                        number = 0
                 return number
             elif roman[roman_string[0]] > roman[roman_string[-1]]:
                 number = roman[roman_string[0]]
                 for i in range(1, len(roman_string)):
-                    number += roman[roman_string[i]]
+                    if roman_string[i] in list(roman.keys()):
+                        number += roman[roman_string[i]]
+                    else:
+                        number = 0
                 return number
         else:
             return 0
