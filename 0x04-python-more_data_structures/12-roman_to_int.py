@@ -15,11 +15,11 @@ def roman_to_int(roman_string):
                     else:
                         number = 0
                 return number
-            elif roman[roman_string[0]] > roman[roman_string[-1]]:
+            elif roman[roman_string[0]] >= roman[roman_string[-1]]:
                 number = roman[roman_string[0]]
                 for i in range(1, len(roman_string)):
                     if roman_string[i] in list(roman.keys()):
-                        number += roman[roman_string[i]]
+                            number += roman[roman_string[i]]
                     else:
                         number = 0
                 return number
