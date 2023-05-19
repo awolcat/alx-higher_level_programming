@@ -2,7 +2,7 @@
 def best_score(a_dictionary):
     number = 0
     student_list = []
-    if len(a_dictionary) > 0 and a_dictionary is not None:
+    if a_dictionary is not None and len(a_dictionary) > 0:
         for key in a_dictionary:
             if a_dictionary[key] > number:
                 number = a_dictionary[key]
