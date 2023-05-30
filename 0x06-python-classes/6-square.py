@@ -50,6 +50,7 @@ class Square:
         """Print the square"""
         if self.__size == 0:
             print()
+            return None
         else:
             print("\n" * self.__position[1], end="")
             for i in range(self.__size):
