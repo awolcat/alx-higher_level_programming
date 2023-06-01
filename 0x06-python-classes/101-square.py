@@ -63,6 +63,9 @@ class Square:
     def __str__(self):
         """Print the square in #'s"""
         my_str = ""
+        if self.__size == 0:
+            return my_str
+        
         for i in range(self.__position[1]):
             my_str += '\n'
         for rows in range(self.__size):
