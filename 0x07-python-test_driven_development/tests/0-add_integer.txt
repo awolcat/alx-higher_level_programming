@@ -1,0 +1,43 @@
+Using the add_integer function
+------------------------------
+
+First import the function from the module 0-add_integer
+
+     >>> add_integer = __import__('0-add_integer').add_integer
+
+Now use it:
+
+With two integers
+
+    >>> add_integer(2, 4)
+    6
+
+With two floats - floats will be floored before addition
+
+    >>> add_integer(3.5, 2.4)
+    5
+
+With a data type that is not a float or integer
+
+    >>> add_integer("hi!", (2, 1))
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+With negative values
+
+    >>> add_integer(-8, -10.2)
+    -18
+
+The second argument is optional and has a default value of 98
+
+    >>> add_integer(10)
+    108
+
+If the second argument is supplied, it must also be an int or float
+
+    >>> add_integer(9, "hi!")
+    Traceback (most recent call last):
+        ...
+    TypeError: b must be an integer
+
