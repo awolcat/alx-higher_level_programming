@@ -1,0 +1,17 @@
+Module 5-text_indentation
+=========================
+
+
+Function text_indentation(text)
+-------------------------------
+
+
+First import the function:
+	>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Text must be a string:
+	>>> text_indentation(99)
+	Traceback (most recent call last):
+		...
+	TypeError: text must be a string
+
