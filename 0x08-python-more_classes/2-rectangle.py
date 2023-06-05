@@ -63,6 +63,7 @@ class Rectangle:
             of a Rectangle object
         """
         if self.__width == 0 or self__height == 0:
-            return 0
-        p = (self.__width + self.__height) * 2
+            p = 0
+        else:
+            p = (self.__width + self.__height) * 2
         return p
