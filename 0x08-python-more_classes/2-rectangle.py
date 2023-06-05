@@ -62,5 +62,7 @@ class Rectangle:
             This public instance method returns the perimeter
             of a Rectangle object
         """
+        if self.__width == 0 or self__height == 0:
+            return 0
         p = (self.__width + self.__height) * 2
         return p
