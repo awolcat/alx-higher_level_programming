@@ -83,5 +83,3 @@ class Rectangle:
                 if tall < self.height - 1:
                     my_str += "\n"
             return my_str
-
-
