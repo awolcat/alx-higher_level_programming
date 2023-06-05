@@ -4,6 +4,8 @@
 
     The class is defined below
 """
+
+
 class Rectangle:
     """
         This classs defines a rectangle
