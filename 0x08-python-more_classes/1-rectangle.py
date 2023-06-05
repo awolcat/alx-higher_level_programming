@@ -19,8 +19,8 @@ class Rectangle:
             __init__ prompts initialization of
             width and height attributes for Rectangle object
         """
-        self.__width = width
         self.__height = height
+        self.__width = width
 
     @property
     def width(self):
