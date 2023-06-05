@@ -80,7 +80,8 @@ class Rectangle:
             for tall in range(self.height):
                 for wide in range(self.width):
                     my_str += "#"
-                my_str += "\n"
+                if tall < self.height - 1:
+                    my_str += "\n"
             return my_str
 
 
