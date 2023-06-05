@@ -124,5 +124,5 @@ class Rectangle:
     @classmethod
     def square(cls, size=0):
         """Defines a square (l == w) Rectangle object"""
-        size = int(size)
-        return cls(size, size)
+        new_obj = cls(size, size)
+        return new_obj
