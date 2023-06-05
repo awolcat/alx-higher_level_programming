@@ -55,15 +55,15 @@ class Rectangle:
             This public instance method returns the area
             of a Rectangle object
         """
-        return self.__width * self.__height
+        return self.width * self.height
 
     def perimeter(self):
         """
             This public instance method returns the perimeter
             of a Rectangle object
         """
-        if self.__width == 0 or self__height == 0:
+        if self.width == 0 or self.height == 0:
             p = 0
         else:
-            p = (self.__width + self.__height) * 2
+            p = (self.width + self.height) * 2
         return p
