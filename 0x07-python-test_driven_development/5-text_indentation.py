@@ -30,6 +30,7 @@ def text_indentation(text):
             new_text += text[idx]
             if text[idx] in delims:
                 new_text += "\n\n"
-                idx += 1
+                while text[idx + 1] == ' ':
+                    idx += 1
             idx += 1
         print(new_text, end="")
