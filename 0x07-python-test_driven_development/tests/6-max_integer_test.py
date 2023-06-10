@@ -7,16 +7,23 @@ max_integer = __import__('6-max_integer').max_integer
     a list of integers and returns the largest
     integer
 """
+
+
 class TestMaxInt(unittest.TestCase):
     """
         This class contains methods that test
         the behavior of the max_integer function
     """
 #    def test_input(self):
- #       """Test if the input is a non-empty list"""
-  #      self.assertIs(max_integer(), list)
+#        """Test if the input is a non-empty list"""
+#        self.assertIs(max_integer(), list)
 
     def test_return(self):
         """Test the return of the function"""
         self.assertIs(max_integer([]), None)
         self.assertIs(max_integer([1, 2, 3, 4]), 4)
+        self.assertIs(max_integer([5, 2, 3, 4]), 5)
+        self.assertIs(max_integer([1, 2, 6, 4]), 6)
+        self.assertIs(max_integer([4]), 4)
+        self.assertIs(max_integer([1, -2, 3, 4]), 4)
+        self.assertIs(max_integer([-1, -2, -3, -4]), -1)
