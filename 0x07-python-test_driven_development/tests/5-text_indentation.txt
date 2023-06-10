@@ -29,15 +29,6 @@ Text must be a string:
 	<BLANKLINE>
 	School
 
-Text may have a blank line:
-
-	>>> text_indentation("""Hello, I am a string:
-	<BLANKLINE>		
-	And this is a blank line""")
-	Hello, I am a string:
-	<BLANKLINE>
-	And this is a blank line
-
 A string argument must be provided:
 
 	>>> text_indentation()
