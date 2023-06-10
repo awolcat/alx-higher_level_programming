@@ -15,14 +15,18 @@ def add_integer(a, b=98):
 
         Floats are floored before addition.
     """
-
+    import math
     if type(a) not in [int, float]:
         raise TypeError("a must be an integer")
 
-    if type(b) not in [int, float]:
+    elif type(b) not in [int, float]:
         raise TypeError("b must be an integer")
-
-    a = int(a)
-    b = int(b)
-
-    return a + b
+    elif math.isnan(a) or math.isnan(b):
+        result = float('nan')
+    elif abs(a) == float('inf') or abs(b) == float('inf'):
+        result = float('inf')
+    else:
+        a = int(a)
+        b = int(b)
+        result = a + b
+    return result

@@ -41,3 +41,15 @@ If the second argument is supplied, it must also be an int or float
         ...
     TypeError: b must be an integer
 
+If the result is a float that overflows
+
+	>>> x = float('inf')
+	>>> add_integer(x, x)
+	inf
+
+If one of the arguments or both are NaN
+
+	>>> a = float("nan")
+	>>> b = float("nan")
+	>>> add_integer(a, b)
+	nan
