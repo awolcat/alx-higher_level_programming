@@ -15,3 +15,18 @@ Text must be a string:
 		...
 	TypeError: text must be a string
 
+	>>> text_indentation("Holberton. School? How are you:    John")
+	Holberton.
+	<BLANKLINE>
+	School?
+	<BLANKLINE>
+	How are you:
+	<BLANKLINE>
+	John
+
+A string argument must be provided:
+
+	>>> text_indentation()
+	Traceback (most recent call last):
+		...
+	TypeError: text_indentation() missing 1 required positional argument: 'text'
