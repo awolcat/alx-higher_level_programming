@@ -25,7 +25,7 @@ of integers/floats")
         raise TypeError("matrix must be a matrix (list of lists) \
 of integers/floats")
 
-    if len(matrix) <= 1:
+    if len(matrix) < 1:
         raise TypeError("matrix must be a matrix (list of lists) \
 of integers/floats")
 

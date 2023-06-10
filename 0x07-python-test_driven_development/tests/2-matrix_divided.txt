@@ -34,6 +34,11 @@ Each row of the matrix should be the same size
 		...
 	TypeError: Each row of the matrix must have the same size
 
+	# A matrix with one list counts as having equal-sized rows
+	>>> matrix = [[4]]
+	>>> matrix_divided(matrix, 2)
+	[[2.0]]
+
 The divisor div must be an integer or float
 
 	>>> matrix = [[1, 2, 3, 4], [5, 6, 7, 8]]
@@ -48,6 +53,24 @@ The divisor div cannot be zero
 	Traceback (most recent call last):
 		...
 	ZeroDivisionError: division by zero
+
+Divisior cannot be float('inf')
+
+	>>> d = float('inf')
+	>>> matrix_divided([[1, 2, 3], [1, 2, 3]], d)
+	[[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
+
+Both args must be present
+
+	>>> matrix_divided([[1]])
+	Traceback (most recent call last):
+		...
+	TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+	>>> matrix_divided()
+        Traceback (most recent call last):
+                ...
+        TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
 
 All results will be rounded to 2 decimal places
 
