@@ -18,3 +18,16 @@ Value must be an integer:
 		...
 	ValueError...height must be greater than 0
 
+Module, Class, Function documentation:
+
+	>>> mod = __import__('7-base_geometry')
+	>>> len(mod.__doc__) > 1
+	True
+
+	>>> cls = __import__('7-base_geometry').BaseGeometry
+	>>> len(cls.__doc__) > 1
+	True
+
+	>>> func = __import__('7-base_geometry').BaseGeometry.integer_validator
+	>>> len(func.__doc__) > 1
+	True
