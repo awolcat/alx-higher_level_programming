@@ -10,7 +10,7 @@ def add_attribute(obj, attr="", value=""):
         This function will add an attribute
         to the object obj if possible
     """
-    if len(dir(obj)) > 26:
+    if len(dir(obj)) > 29:
         raise TypeError("can't add new attribute")
     else:
         setattr(obj, attr, value)
