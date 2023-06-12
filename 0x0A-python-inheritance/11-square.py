@@ -31,4 +31,4 @@ class Square(Rectangle):
             This function returns a custom
             string representation of a square object
         """
-        return f"[{self.__class__.__name__}] {self.__size}/{self.__size}"
+        return repr(str(self))
