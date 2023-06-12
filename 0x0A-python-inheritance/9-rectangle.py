@@ -31,4 +31,4 @@ class Rectangle(BaseGeometry):
             This magic method defines the print format
             for Rectangle objects
         """
-        return "[{self.__class__.__name__}] {self.__width}/{self.__height}"
+        return f"[{self.__class__.__name__}] {self.__width}/{self.__height}"
