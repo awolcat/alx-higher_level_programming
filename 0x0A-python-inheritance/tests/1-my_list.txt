@@ -1,9 +1,7 @@
 Using MyList Class
 ==================
 
-First, import the class:
-
-	>>> MyList = __import__('1-my_list').MyList
+Remember, always import the class:
 
 print_sorted method of MyList class
 ===================================
@@ -11,7 +9,6 @@ print_sorted method of MyList class
 The print_sorted method prints a sorted version of the list:
 
 	>>> MyList = __import__('1-my_list').MyList
-
 	>>> my_list = MyList()
 	>>> my_list.append(1)
 	>>> my_list.append(4)
@@ -24,3 +21,10 @@ The print_sorted method prints a sorted version of the list:
 	[1, 2, 3, 4, 5]
 	>>> print(my_list)
 	[1, 4, 2, 3, 5]
+
+print_sorted does nothing if the list is empty:
+
+	>>> MyList = __import__('1-my_list').MyList
+	>>> my_list = MyList()
+	>>> my_list.print_sorted()
+	[]
