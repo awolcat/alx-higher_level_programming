@@ -28,3 +28,12 @@ print_sorted does nothing if the list is empty:
 	>>> my_list = MyList()
 	>>> my_list.print_sorted()
 	[]
+
+print_sorted does nothing if the list is None:
+
+	>>> MyList = __import__('1-my_list').MyList
+	>>> my_list = None
+	>>> my_list.print_sorted() # doctest: +ELLIPSIS
+	Traceback (most recent call last):
+                ...
+        AttributeError: 'NoneType' object has no attribute 'print_sorted'
