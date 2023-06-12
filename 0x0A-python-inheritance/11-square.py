@@ -25,10 +25,11 @@ class Square(Rectangle):
             the area of a Square object
         """
         return self.__size ** 2
-
-    def __repr__(self):
-        """
+    """
+        def __str__(self):
+        
             This function returns a custom
             string representation of a square object
-        """
+    
         return repr(str(self))
+    """
