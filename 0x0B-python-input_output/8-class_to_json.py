@@ -2,14 +2,12 @@
 """
     This module defines a single function: class_to_json
 """
-import json
 
 
 def class_to_json(obj):
     """
         This function takes an object,
-        serializes its attributes, and returns
-        a serialized json object
+        and returns its attributes as a dictionary
     """
     attributes = obj.__dict__
     return attributes
