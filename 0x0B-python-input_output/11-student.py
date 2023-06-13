@@ -43,4 +43,7 @@ class Student:
             of the instance with corresponding values
             in dict returned from the method to_json
         """
-        self.__init__(json['first_name'], json['last_name'], json['age'])
+        self.first_name = json['first_name']
+        self.last_name = json['last_name']
+        self.age = json['age']
+        # self.__init__(json['first_name'], json['last_name'], json['age'])
