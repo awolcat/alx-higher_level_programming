@@ -24,3 +24,21 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(obj.x, 6)
         self.assertEqual(obj.y, 6)
         self.assertEqual(obj.id, 20)
+
+    def test_init_types(self):
+        self.assertRaises(TypeError, Rectangle, "2", 3)
+        self.assertRaises(TypeError, Rectangle, 2, "3")
+        self.assertRaises(TypeError, Rectangle, 2, [0, 2, 3])
+        self.assertRaises(ValueError, Rectangle, 0, 3)
+        self.assertRaises(ValueError, Rectangle, 3, 0)
+        self.assertRaises(ValueError, Rectangle, -1, 3)
+        self.assertRaises(ValueError, Rectangle, 3, -1)
+
+        self.assertRaises(ValueError, Rectangle, 2, 3, -1, 9)
+        self.assertRaises(ValueError, Rectangle, 4, 3, 2, -1)
+        self.assertRaises(TypeError, Rectangle, 3, 3, "3", 2)
+        self.assertRaises(TypeError, Rectangle, 3, 3, 3, "2")
+
+    def test_area(self):
+        obj = Rectangle(4, 6)
+        self.assertEqual(obj.area(), 24)
