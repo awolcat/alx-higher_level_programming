@@ -97,4 +97,69 @@ class Rectangle(Base):
         """Calculates and returns
             The area of an instance
         """
-        return self.__height * self.__width
+        return self.height * self.width
+
+    def display(self):
+        """This method will print the object
+            using '#'
+        """
+        string = ''
+        string = '\n' * self.y
+        for height in range(self.height):
+            string += (' ' * self.x) + ('#' * self.width)
+            if height < self.height - 1:
+                string += '\n'
+        print(string)
+        return string
+
+    def __str__(self):
+        """This method will return
+            a custom string representation
+            to the print function/user
+        """
+        string = f"[{self.__class__.__name__}] ({self.id}) {self.x}/{self.y}"
+        string += f" - {self.width}/{self.height}"
+        return string
+
+    def update(self, *args, **kwargs):
+        """Update the attributes of an instance
+            Args:
+                *args: a variable number of unnamed args
+        """
+        if args is not None and len(args) > 0:
+            length = len(args)
+            if length >= 1:
+                self.id = args[0]
+            if length >= 2:
+                self.width = args[1]
+            if length >= 3:
+                self.height = args[2]
+            if length >= 4:
+                self.x = args[3]
+            if length >= 5:
+                self.y = args[4]
+        else:
+            for key in kwargs:
+                if key == 'width':
+                    self.width = kwargs[key]
+                if key == 'height':
+                    self.height = kwargs[key]
+                if key == 'x':
+                    self.x = kwargs[key]
+                if key == 'y':
+                    self.y = kwargs[key]
+                if key == 'id':
+                    self.id = kwargs[key]
+
+    def to_dictionary(self):
+        """Create and return a dictionary representation
+            of a rectangle
+        """
+        dic = {
+                'x': self.x,
+                'y': self.y,
+                'id': self.id,
+                'height': self.height,
+                'width': self.width
+                }
+        return dic
