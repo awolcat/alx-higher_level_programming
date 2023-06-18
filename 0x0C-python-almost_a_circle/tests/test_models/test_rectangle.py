@@ -75,6 +75,8 @@ class TestRectangle(unittest.TestCase):
         self.assertTrue(str(r1) == "[Rectangle] (12) 2/1 - 4/6")
 
     def test_update_0(self):
+        doc = len(Rectangle.update.__doc__)
+        self.assertTrue(doc > 0)
         r1 = Rectangle(10, 10, 10, 10)
         self.assertTrue(str(r1) == "[Rectangle] (5) 10/10 - 10/10")
         r1.update(89)
