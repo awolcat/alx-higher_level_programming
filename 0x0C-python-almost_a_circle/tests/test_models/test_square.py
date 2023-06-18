@@ -80,7 +80,7 @@ class TestRectangle(unittest.TestCase):
         doc = len(Square.update.__doc__)
         self.assertTrue(doc > 0)
         s1 = Square(5)
-        self.assertTrue(str(s1) == "[Square] (6) 0/0 - 5")
+        self.assertTrue(str(s1) == "[Square] (7) 0/0 - 5")
         s1.update(10)
         self.assertTrue(str(s1) == "[Square] (10) 0/0 - 5")
         s1.update(1, 2)
@@ -95,3 +95,11 @@ class TestRectangle(unittest.TestCase):
         self.assertTrue(str(s1) == "[Square] (1) 12/1 - 7")
         s1.update(size=7, id=89, y=1)
         self.assertTrue(str(s1) == "[Square] (89) 12/1 - 7")
+
+    def test_to_dictionary(self):
+        doc = len(Square.to_dictionary.__doc__)
+        self.assertTrue(doc > 0)
+        s1 = Square(10, 10, 10)
+        dic = s1.to_dictionary()
+        self.assertTrue(type(dic) is dict)
+        self.assertTrue(len(dic) == 4)
