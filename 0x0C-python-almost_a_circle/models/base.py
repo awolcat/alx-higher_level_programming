@@ -3,6 +3,7 @@
     will manage the unique id variable accross the project
 """
 import json
+import csv
 
 
 class Base:
@@ -83,3 +84,43 @@ class Base:
         my_list = cls.from_json_string(my_str)
         objs_list = [cls.create(**dic) for dic in my_list]
         return objs_list
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Get dictionary representation of an object,
+            serialize the dict to CSV, and write
+            serialized data to CSV file
+        """
+        filename = cls.__name__ + '.csv'
+        if list_objs is None:
+            my_data = []
+        else:
+            my_data = [obj.to_dictionary() for obj in list_objs]
+            if cls.__name__ == 'Rectangle':
+                fields = ['id', 'width', 'height', 'x', 'y']
+            if cls.__name__ == 'Square':
+                fields = ['id', 'size', 'x', 'y']
+        with open(filename, 'w', encoding='utf-8') as stream:
+            csv_stream = csv.DictWriter(stream, fieldnames = fields)
+            csv_stream.writeheader()
+            csv_stream.writerows(my_data)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Create an instance or list of instances
+            from a csv file
+        """
+        filename = cls.__name__ + '.csv'
+        try:
+            with open(filename, 'r') as stream:
+                csv_stream = csv.DictReader(stream)
+                my_dicts = [dic for dic in csv_stream]
+                true_dict = []
+                for dic in my_dicts:
+                    for key in dic:
+                        dic[key] = int(dic[key])
+                    true_dict.append(dic)
+                my_objs = [cls.create(**dic) for dic in true_dict]
+        except FileNotFoundError:
+            my_objs = []
+        return my_objs
