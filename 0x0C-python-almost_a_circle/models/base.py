@@ -101,7 +101,7 @@ class Base:
             if cls.__name__ == 'Square':
                 fields = ['id', 'size', 'x', 'y']
         with open(filename, 'w', encoding='utf-8') as stream:
-            csv_stream = csv.DictWriter(stream, fieldnames = fields)
+            csv_stream = csv.DictWriter(stream, fieldnames=fields)
             csv_stream.writeheader()
             csv_stream.writerows(my_data)
 
