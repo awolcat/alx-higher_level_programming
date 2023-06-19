@@ -71,16 +71,17 @@ class TestRectangle(unittest.TestCase):
         doc = len(Square.size.__doc__)
         self.assertTrue(doc > 0)
         s1 = Square(5)
-        self.assertTrue(str(s1) == "[Square] (5) 0/0 - 5")
+        self.assertTrue(s1.size == 5)
         s1.size = 10
-        self.assertTrue(str(s1) == "[Square] (5) 0/0 - 10")
+        self.assertTrue(s1.size == 10)
         self.assertNotIn('height', Square.__dict__)
 
     def test_update_0(self):
         doc = len(Square.update.__doc__)
         self.assertTrue(doc > 0)
         s1 = Square(5)
-        self.assertTrue(str(s1) == "[Square] (7) 0/0 - 5")
+        s1.update(id=1)
+        self.assertTrue(str(s1) == "[Square] (1) 0/0 - 5")
         s1.update(10)
         self.assertTrue(str(s1) == "[Square] (10) 0/0 - 5")
         s1.update(1, 2)

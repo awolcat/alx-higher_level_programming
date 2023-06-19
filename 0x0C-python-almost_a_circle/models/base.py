@@ -72,4 +72,3 @@ class Base:
         my_list = cls.from_json_string(my_str)
         objs_list = [cls.create(**dic) for dic in my_list]
         return objs_list
-

@@ -77,7 +77,7 @@ class TestRectangle(unittest.TestCase):
     def test_update_0(self):
         doc = len(Rectangle.update.__doc__)
         self.assertTrue(doc > 0)
-        r1 = Rectangle(10, 10, 10, 10)
+        r1 = Rectangle(10, 10, 10, 10, 6)
         self.assertTrue(str(r1) == "[Rectangle] (6) 10/10 - 10/10")
         r1.update(89)
         self.assertTrue(str(r1) == "[Rectangle] (89) 10/10 - 10/10")
@@ -93,7 +93,7 @@ class TestRectangle(unittest.TestCase):
     def test_update_1(self):
         doc = len(Rectangle.update.__doc__)
         self.assertTrue(doc > 0)
-        r1 = Rectangle(10, 10, 10, 10)
+        r1 = Rectangle(10, 10, 10, 10, 7)
         self.assertTrue(str(r1) == "[Rectangle] (7) 10/10 - 10/10")
         r1.update(height=1)
         self.assertTrue(str(r1) == "[Rectangle] (7) 10/10 - 10/1")

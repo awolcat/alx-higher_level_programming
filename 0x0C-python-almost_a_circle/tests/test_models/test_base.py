@@ -17,3 +17,13 @@ class TestBase(unittest.TestCase):
         self.assertEqual(Base().id, 1)
         self.assertEqual(Base().id, 2)
         self.assertEqual(Base(10).id, 10)
+
+    def test_to_json_string(self):
+        doc = len(Base.to_json_string.__doc__)
+        self.assertTrue(doc > 0)
+        json_dictionary = Base.to_json_string([])
+        self.assertTrue(json_dictionary == "[]")
+        json_dictionary = Base.to_json_string([{'height': 2, 'width': 2}])
+        self.assertTrue(type(json_dictionary) is str)
+        json_dictionary = Base.to_json_string([{'size': 2}])
+        self.assertTrue(type(json_dictionary) is str)
