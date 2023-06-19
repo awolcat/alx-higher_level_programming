@@ -61,7 +61,7 @@ class Base:
             from a dictionary representation
         """
         obj = cls(1, 1)
-        obj.update(**dictionary)
+        obj.update(None, **dictionary)
         return obj
 
     @classmethod
