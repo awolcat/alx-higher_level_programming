@@ -60,7 +60,10 @@ class Base:
         """Create a Rectangle or Square object
             from a dictionary representation
         """
-        obj = cls(1, 1, 1, 1)
+        if cls.__name__ == 'Square':
+            obj = cls(1)
+        if cls.__name__ == 'Rectangle':
+            obj = cls(1, 1)
         obj.update(**dictionary)
         return obj
 
