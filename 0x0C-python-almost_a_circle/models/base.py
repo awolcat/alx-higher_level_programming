@@ -61,7 +61,7 @@ class Base:
             from a dictionary representation
         """
         obj = cls(1, 1)
-        obj.update(None, **dictionary)
+        obj.update(**dictionary)
         return obj
 
     @classmethod
@@ -70,8 +70,12 @@ class Base:
             from a string (json) representation
         """
         filename = cls.__name__ + '.json'
-        with open(filename, 'r+', encoding='utf-8') as stream:
-            my_str = stream.read()
+        try:
+            with open(filename, 'r', encoding='utf-8') as stream:
+                my_str = stream.read()
+        except FileNotFoundError:
+            my_list = []
+            return my_list
         my_list = cls.from_json_string(my_str)
         objs_list = [cls.create(**dic) for dic in my_list]
         return objs_list
