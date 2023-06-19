@@ -2,9 +2,8 @@
 """This module defines a class Rectangle
     that inherits from Base
 """
-
-
 from models.base import Base
+
 
 class Rectangle(Base):
     """This class defines a rectangle object that
@@ -37,7 +36,6 @@ class Rectangle(Base):
         if width <= 0:
             raise ValueError('width must be > 0')
         self.__width = width
-
 
     @property
     def height(self):

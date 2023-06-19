@@ -49,7 +49,10 @@ class Base:
         """Deserialize a json (string) object
             and return it
         """
-        my_obj = json.loads(json_string)
+        if json_string is None or len(json_string) < 1:
+            my_obj = []
+        else:
+            my_obj = json.loads(json_string)
         return my_obj
 
     @classmethod
