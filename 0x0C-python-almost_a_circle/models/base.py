@@ -60,7 +60,7 @@ class Base:
         """Create a Rectangle or Square object
             from a dictionary representation
         """
-        obj = cls(1, 1)
+        obj = cls(1, 1, 1, 1)
         obj.update(**dictionary)
         return obj
 
@@ -76,6 +76,7 @@ class Base:
         except FileNotFoundError:
             my_list = []
             return my_list
+
         my_list = cls.from_json_string(my_str)
         objs_list = [cls.create(**dic) for dic in my_list]
         return objs_list
