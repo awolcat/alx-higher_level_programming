@@ -1,7 +1,7 @@
 -- Query cities in California
 -- Query cities table and subquery states
 SELECT id, name
-FROM hbtn_0d_usa.cities
+FROM cities
 WHERE id IN (
 	SELECT id
 	FROM states
