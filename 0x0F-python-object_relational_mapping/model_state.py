@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """This module defines the States class
     that in turn defines the states table
     in the diclarative metadata
