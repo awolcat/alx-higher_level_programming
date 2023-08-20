@@ -14,7 +14,7 @@ if __name__ == '__main__':
     name = args[4]
 
     query = """SELECT * FROM states
-            WHERE name = '{}'
+            WHERE name LIKE BINARY '{}'
             ORDER BY id ASC""".format(name)
     db = MySQLdb.connect(host=Host, user=User, password=Pass, database=dbName)
     cursor = db.cursor()
