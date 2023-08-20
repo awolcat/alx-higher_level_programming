@@ -12,5 +12,5 @@ class State(Base):
     """This class defines the table states"""
     __tablename__ = 'states'
     id = Column(Integer, primary_key=True,
-                autoincrement='auto', nullable=False, unique=True)
+                autoincrement=True, nullable=False, unique=True)
     name = Column(String(128), nullable=False)
