@@ -1,16 +1,12 @@
 #!/usr/bin/python3
-import sys
-import MySQLdb
-
 """This module lists all states in the database
     specified
 """
+import sys
+import MySQLdb
 
 
-def show_states():
-    """This function accesses the specified database through MySQLdb driver
-        specifically accessing the states table and printing its contents
-    """
+if __name__ == '__main__':
     args = sys.argv
     User = args[1]
     Pass = args[2]
@@ -22,7 +18,3 @@ def show_states():
     states = cursor.fetchall()
     for state in states:
         print(state)
-
-
-if __name__ == '__main__':
-    show_states()
