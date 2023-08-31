@@ -1,3 +1,3 @@
 #!/bin/bash
 # Print only the response code
-curl -sLw "%{http_code}" "$1"
+curl -sw "%{http_code}" "$1"
