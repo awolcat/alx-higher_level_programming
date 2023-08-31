@@ -1,2 +1,2 @@
-# complexity
-O(n2)
+O(nlog(n))
+
