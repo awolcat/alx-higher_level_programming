@@ -6,7 +6,8 @@
 import sys
 import urllib.request
 
-try:
-    req = urllib.request.urlopen(sys.argv[1])
-except Exception as e:
-    print('Error code: ', e.code)
+if __name__ == '__main___':
+    try:
+        req = urllib.request.urlopen(sys.argv[1])
+    except Exception as e:
+        print('Error code: ', e.code)
