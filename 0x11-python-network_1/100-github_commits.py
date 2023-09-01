@@ -1,0 +1,18 @@
+#!/usr/bin/python3
+"""This module defines a script that will
+    list 10 commits (from the most recent to oldest)
+    of the repository “rails” by the user “rails”
+"""
+import sys
+import requests
+
+owner = sys.argv[1]
+repo = sys.argv[2]
+
+URL = f'https://api.github.com/repos/{owner}/{repo}/commits'
+
+response = requests.get(URL)
+for commit in response.json():
+    sha = commit.get('sha')
+    author = commit.get('commit').get('author').get('name')
+    print('{}: {}'.format(sha, author))
