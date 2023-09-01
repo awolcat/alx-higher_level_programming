@@ -6,9 +6,9 @@
 import sys
 import urllib.request
 from urllib.error import HTTPError
-if __name__ == '__main___':
+if __name__ == '__main__':
     try:
         with urllib.request.urlopen(sys.argv[1]) as req:
-            pass
+            print(req.read().decode())
     except HTTPError as e:
         print('Error code: ', e.code)
