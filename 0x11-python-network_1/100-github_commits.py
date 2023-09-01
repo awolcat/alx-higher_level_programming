@@ -13,9 +13,11 @@ if __name__ == '__main__':
     URL = f'https://api.github.com/repos/{owner}/{repo}/commits'
 
     response = requests.get(URL)
-
-    for index in range(0, 10):
-        commit = response.json()[index]
-        sha = commit.get('sha')
-        author = commit.get('commit').get('author').get('name')
-        print('{}: {}'.format(sha, author))
+    try:
+        for index in range(0, 10):
+            commit = response.json()[index]
+            sha = commit.get('sha')
+            author = commit.get('commit').get('author').get('name')
+            print('{}: {}'.format(sha, author))
+    except Exception:
+        pass
