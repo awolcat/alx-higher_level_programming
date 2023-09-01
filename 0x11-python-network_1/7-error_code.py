@@ -13,6 +13,6 @@ if __name__ == '__main__':
         err = response.raise_for_status()
         if not err:
             print('{}'.format(response.text))
-    except Exception:
+    except requests.exceptions.HTTPError:
         if response.status_code >= 400:
             print('Error code: {}'.format(response.status_code))
