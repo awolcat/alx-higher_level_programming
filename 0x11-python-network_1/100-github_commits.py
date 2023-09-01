@@ -13,9 +13,10 @@ if __name__ == '__main__':
     URL = f'https://api.github.com/repos/{owner}/{repo}/commits'
 
     response = requests.get(URL)
+    commits = response.json()
     try:
         for index in range(0, 10):
-            commit = response.json()[index]
+            commit = commits[index]
             sha = commit.get('sha')
             author = commit.get('commit').get('author').get('name')
             print('{}: {}'.format(sha, author))
