@@ -8,6 +8,7 @@ import urllib.request
 
 if __name__ == '__main___':
     try:
-        req = urllib.request.urlopen(sys.argv[1])
+        with urllib.request.urlopen(sys.argv[1]) as req:
+            pass
     except Exception as e:
         print('Error code: ', e.code)
