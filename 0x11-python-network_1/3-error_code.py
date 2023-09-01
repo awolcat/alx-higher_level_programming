@@ -12,5 +12,4 @@ if __name__ == '__main__':
             response = req.read()
             print(response.decode('utf-8'))
     except URLError as e:
-        if hasattr(e, 'code'):
-            print('Error code: ', e.code)
+        print('Error code: ', e.status)
