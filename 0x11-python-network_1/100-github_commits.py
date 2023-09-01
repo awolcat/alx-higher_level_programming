@@ -7,8 +7,8 @@ import sys
 import requests
 
 if __name__ == '__main__':
-    owner = sys.argv[1]
-    repo = sys.argv[2]
+    repo = sys.argv[1]
+    owner = sys.argv[2]
 
     URL = f'https://api.github.com/repos/{owner}/{repo}/commits'
 
