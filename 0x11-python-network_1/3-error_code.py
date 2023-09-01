@@ -5,10 +5,12 @@
 """
 import sys
 import urllib.request
-from urllib.error import HTTPError
+from urllib.error import URLError
 if __name__ == '__main__':
     try:
         with urllib.request.urlopen(sys.argv[1]) as req:
-            print(req.read().decode('utf-8'))
-    except HTTPError as e:
-        print('Error code: ', e.code)
+            response = req.read()
+            print(response.decode('utf-8'))
+    except URLError as e:
+        if hasattr(e, 'code'):
+            print('Error code: ', e.code)
