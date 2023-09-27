@@ -2,9 +2,18 @@
 
 const request = require('request');
 
-const url = 'https://swapi-api.alx-tools.com/api/people/18';
+const url = process.argv[2];
+let count = 0;
 request(url, (err, response, body) => {
   if (err) throw err;
-  const films = JSON.parse(body).films;
-  console.log(films.length);
+  const films = JSON.parse(body).results;
+  for (const obj of films) {
+    for (const characters of obj.characters) {
+      const charactersList = characters.split('/');
+      if (charactersList[charactersList.length - 2] === '18') {
+        count = count + 1;
+      }
+    }
+  }
+  console.log(count);
 });
